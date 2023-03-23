@@ -3,5 +3,41 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "@tots/image-preview-modal": {
+      "projectType": "library",
+      "root": "projects/tots/image-preview-modal",
+      "sourceRoot": "projects/tots/image-preview-modal/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/tots/image-preview-modal/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tots/image-preview-modal/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tots/image-preview-modal/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/tots/image-preview-modal/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "fcb8c42f-3dac-4e5d-a560-a88a11772eb7"
   }
 }
