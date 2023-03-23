@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 /** Angular Material */
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 /** Modals */
 import { TotsImagePreviewModalComponent } from './modals/image-preview-modal/image-preview-modal.component';
@@ -22,6 +23,7 @@ import { TotsImagePreviewModalComponent } from './modals/image-preview-modal/ima
 
     /** Angular Material */
     MatDialogModule,
+    MatIconModule
   ],
   exports: [
     /** Modals */

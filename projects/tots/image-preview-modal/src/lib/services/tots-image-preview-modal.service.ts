@@ -14,7 +14,7 @@ export class TotsImagePreviewModalService {
 
   open(images: Array<TotsImage>) {
     this.dialog.open(TotsImagePreviewModalComponent, {
-      data: images
+      data: { items: images }
     });
   }
 }
