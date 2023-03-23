@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TotsImagePreviewModalService } from 'projects/tots/image-preview-modal/src/public-api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'example';
+
+  constructor(
+    protected imagePreviewModal: TotsImagePreviewModalService
+  ) {}
+
+  onClickOpen() {
+    this.imagePreviewModal.open([]);
+  }
 }
