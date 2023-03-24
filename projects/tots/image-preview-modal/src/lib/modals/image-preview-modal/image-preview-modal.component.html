@@ -5,7 +5,10 @@
     </div>
 
     <div class="tots-image-modal-toolbar">
-        <button mat-dialog-close>Close</button>
+        <ng-container *ngIf="data.buttons">
+            <button *ngFor="let button of data.buttons" mat-button class="{{button.classes}}" (click)="onClick(button)"><mat-icon *ngIf="button.icon">{{button.icon}}</mat-icon> {{button.title}}</button>
+        </ng-container>
+        <button mat-button mat-dialog-close>Close</button>
     </div>
 
     <div class="tots-image-modal-pagination">

@@ -1,5 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Subject } from 'rxjs';
+import { TotsActionImage } from '../../entities/tots-action-image';
+import { TotsButtonImage } from '../../entities/tots-button-image';
 import { TotsImage } from '../../entities/tots-image';
 
 @Component({
@@ -12,9 +15,11 @@ export class TotsImagePreviewModalComponent implements OnInit {
   selectedIndex = 0;
   selectedImage?: TotsImage;
 
+  onActions = new Subject<TotsActionImage>();
+
   constructor(
 		protected dialogRef: MatDialogRef<TotsImagePreviewModalComponent>,
-		@Inject(MAT_DIALOG_DATA) public data : { items: Array<TotsImage>, selectedIndex?: number},
+		@Inject(MAT_DIALOG_DATA) public data : { items: Array<TotsImage>, selectedIndex?: number, buttons?: Array<TotsButtonImage>},
 	) { }
 
   ngOnInit(): void {
@@ -22,6 +27,10 @@ export class TotsImagePreviewModalComponent implements OnInit {
       this.selectedIndex = this.data.selectedIndex;
     }
     this.selectedImage = this.data.items[this.selectedIndex];
+  }
+
+  onClick(button: TotsButtonImage) {
+    this.onActions.next({ key: button.key, image: this.selectedImage, dialogRef: this.dialogRef });
   }
 
   onClickNext() {

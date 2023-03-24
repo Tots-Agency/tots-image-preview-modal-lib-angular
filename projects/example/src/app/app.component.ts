@@ -19,6 +19,11 @@ export class AppComponent {
       { url: 'https://tots.agency/assets/img/blog/Smart-Cities-700x441.jpg' },
       { url: 'https://tots.agency/assets/img/blog/Digitalizacion-1-400x253.jpg' },
       { url: 'https://tots.agency/assets/img/blog/an-inner-transformation-going-back-to-the-natural-living-system.jpg' },
-    ]);
+    ], 2, [
+      { key: 'delete', icon: 'delete', title: 'Delete', classes: 'warning' },
+    ])
+    .subscribe(res => {
+      console.log(res);
+    });
   }
 }
