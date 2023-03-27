@@ -1,19 +1,21 @@
 <div class="tots-image-preview-modal">
 
-    <div *ngIf="selectedImage" class="tots-image-container-source">
-        <img [src]="selectedImage.url" alt="" />
-    </div>
+  <div *ngIf="selectedImage" class="tots-image-container-source">
+    <mat-spinner diameter="50"></mat-spinner>
+    <img [src]="selectedImage.url" alt="" />
+  </div>
 
-    <div class="tots-image-modal-toolbar">
-        <ng-container *ngIf="data.buttons">
-            <button *ngFor="let button of data.buttons" mat-button class="{{button.classes}}" (click)="onClick(button)"><mat-icon *ngIf="button.icon">{{button.icon}}</mat-icon> {{button.title}}</button>
-        </ng-container>
-        <button mat-button mat-dialog-close>Close</button>
-    </div>
+  <div class="tots-image-modal-toolbar">
+    <ng-container *ngIf="data.buttons">
+      <button *ngFor="let button of data.buttons" mat-flat-button class="{{button.classes}}" [color]="button.color" (click)="onClick(button)"><mat-icon *ngIf="button.icon">{{button.icon}}</mat-icon> {{button.title}}</button>
+    </ng-container>
+    <button mat-button mat-dialog-close class="btn-close">CLOSE</button>
+  </div>
 
-    <div class="tots-image-modal-pagination">
-        <button (click)="onClickPrev()"><mat-icon>arrow_back_ios_new</mat-icon></button>
-        <div>{{(selectedIndex+1)}} / {{data.items.length}}</div>
-        <button (click)="onClickNext()"><mat-icon>arrow_forward_ios_new</mat-icon></button>
-    </div>
+  <div class="tots-image-modal-pagination">
+    <button (click)="onClickPrev()" mat-icon-button><mat-icon>arrow_back_ios_new</mat-icon></button>
+    <div>{{(selectedIndex+1)}} / {{data.items.length}}</div>
+    <button (click)="onClickNext()" mat-icon-button><mat-icon>arrow_forward_ios_new</mat-icon></button>
+  </div>
+
 </div>

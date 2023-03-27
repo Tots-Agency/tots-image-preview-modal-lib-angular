@@ -20,7 +20,7 @@ export class AppComponent {
       { url: 'https://tots.agency/assets/img/blog/Digitalizacion-1-400x253.jpg' },
       { url: 'https://tots.agency/assets/img/blog/an-inner-transformation-going-back-to-the-natural-living-system.jpg' },
     ], 2, [
-      { key: 'delete', icon: 'delete', title: 'Delete', classes: 'warning' },
+      { key: 'delete', icon: 'delete', title: 'DELETE', classes: 'warning', color: 'warn' },
     ])
     .subscribe(res => {
       console.log(res);

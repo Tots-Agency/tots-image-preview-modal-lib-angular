@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 /** Modals */
 import { TotsImagePreviewModalComponent } from './modals/image-preview-modal/image-preview-modal.component';
@@ -14,7 +15,7 @@ import { TotsImagePreviewModalComponent } from './modals/image-preview-modal/ima
 
 @NgModule({
   declarations: [
-    
+
     /** Modals */
     TotsImagePreviewModalComponent
   ],
@@ -26,6 +27,7 @@ import { TotsImagePreviewModalComponent } from './modals/image-preview-modal/ima
     MatDialogModule,
     MatIconModule,
     MatButtonModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     /** Modals */

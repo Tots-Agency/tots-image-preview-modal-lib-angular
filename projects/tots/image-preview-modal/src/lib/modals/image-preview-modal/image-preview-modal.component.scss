@@ -1,35 +1,79 @@
-.tots-image-preview-modal{
-    position: fixed;
-    top: 0; left: 0;
+.tots-image-preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000000, $alpha: 0.25);
+
+  .tots-image-container-source {
     width: 100vw;
     height: 100vh;
-    background-color: rgba($color: #000000, $alpha: 0.25);
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
-.tots-image-modal-toolbar{
+    img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      z-index: 2;
+    }
+
+    mat-spinner{
+      position: fixed;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+      z-index: 1;
+    }
+  }
+
+  .tots-image-modal-toolbar {
     display: flex;
     align-items: flex-end;
     justify-content: end;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: calc(100% - 48px);
-    padding: 12px 24px;
-    padding-bottom: 24px;
-}
+    top: 1.5em;
+    right: 1.5em;
+    gap: 0.5em;
 
-.tots-image-container-source {
-    padding: 24px;
-    img { width: 90%; height: 90%; object-fit: cover; margin: auto; position: relative; }
-}
+    .btn-close {
+      background-color: white;
+      color: black;
+      min-width: 120px;
+    }
+  }
 
-.tots-image-modal-pagination {
+  .tots-image-modal-pagination {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    bottom: 0;
-    padding: 12px 24px;
-    padding-bottom: 24px;
-    width: calc(100% - 48px);
+    border-radius: 200px;
+    background-color: #111111;
+    width: 150px;
+    bottom: 2em;
+    left: calc(50% - 75px);
+    color: white;
+    overflow: hidden;
+
+    button {
+      transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      opacity: 0.5;
+      border-radius: 0;
+      &:hover {
+        opacity: 1;
+        background-color: rgba($color: white, $alpha: 0.05);
+      }
+    }
+
+    div {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
