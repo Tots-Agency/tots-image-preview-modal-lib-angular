@@ -9,7 +9,7 @@
     <ng-container *ngIf="data.buttons">
       <button *ngFor="let button of data.buttons" mat-flat-button class="{{button.classes}}" [color]="button.color" (click)="onClick(button)"><mat-icon *ngIf="button.icon">{{button.icon}}</mat-icon> {{button.title}}</button>
     </ng-container>
-    <button mat-button class="btn-close" (click)="close()">CLOSE</button>
+    <button mat-button class="btn-close" (click)="close()">Close</button>
   </div>
 
   <div class="tots-image-modal-pagination">
