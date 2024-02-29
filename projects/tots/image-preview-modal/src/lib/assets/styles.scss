@@ -5,9 +5,6 @@
 
     .mat-mdc-dialog-surface {
         margin: 0;
-    }
-
-    .mat-mdc-dialog-surface {
-        --mdc-dialog-container-color: transparent !important;
+        background-color: transparent !important;
     }
 }
