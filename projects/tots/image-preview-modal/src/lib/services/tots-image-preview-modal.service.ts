@@ -18,6 +18,7 @@ export class TotsImagePreviewModalService {
   open(images: Array<TotsImage>, selectedIndex?: number, buttons?: Array<TotsButtonImage>): Observable<TotsActionImage> {
     return this.dialog.open(TotsImagePreviewModalComponent, {
       data: { items: images, buttons: buttons, selectedIndex: selectedIndex },
+      panelClass: ["tots-image-preview-dialog"],
     }).componentInstance.onActions;
   }
 }
