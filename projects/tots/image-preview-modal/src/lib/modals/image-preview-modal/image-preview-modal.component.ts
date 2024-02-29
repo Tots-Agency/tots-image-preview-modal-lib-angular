@@ -32,7 +32,7 @@ export class TotsImagePreviewModalComponent implements OnInit {
   onClick(button: TotsButtonImage) {
     this.onActions.next({ key: button.key, image: this.selectedImage, dialogRef: this.dialogRef });
   }
-  protected emitClose($event:MouseEvent) {
+  protected close() {
     this.dialogRef.close();
     this.onActions.next({ key: "close", image: this.selectedImage, dialogRef: this.dialogRef });
   }

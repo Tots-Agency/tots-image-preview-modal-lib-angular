@@ -1,6 +1,6 @@
 <div class="tots-image-preview-modal">
 
-  <div *ngIf="selectedImage" class="tots-image-container-source" (click)="emitClose($event)">
+  <div *ngIf="selectedImage" class="tots-image-container-source" (click)="close()">
     <mat-spinner diameter="50"></mat-spinner>
     <img [src]="selectedImage.url" alt="" (click)="$event.stopPropagation()"/>
   </div>
@@ -9,7 +9,7 @@
     <ng-container *ngIf="data.buttons">
       <button *ngFor="let button of data.buttons" mat-flat-button class="{{button.classes}}" [color]="button.color" (click)="onClick(button)"><mat-icon *ngIf="button.icon">{{button.icon}}</mat-icon> {{button.title}}</button>
     </ng-container>
-    <button mat-button class="btn-close" (click)="emitClose($event)">CLOSE</button>
+    <button mat-button class="btn-close" (click)="close()">CLOSE</button>
   </div>
 
   <div class="tots-image-modal-pagination">
